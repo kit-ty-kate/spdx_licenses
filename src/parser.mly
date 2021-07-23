@@ -10,6 +10,9 @@
 %token RPAREN
 %token EOF
 
+%left OR
+%left AND
+
 %start main
 %type <Types.t> main
 
