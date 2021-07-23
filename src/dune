@@ -1,0 +1,6 @@
+(library
+ (public_name spdx_licenses)
+ (modules_without_implementation types))
+
+(ocamllex lexer)
+(ocamlyacc parser)
