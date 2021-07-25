@@ -11,4 +11,14 @@ type t =
   | AND of t * t
   | OR of t * t
 
-val parse : string -> t option
+type errors = [
+  | `InvalidLicenseID of string
+  | `InvalidExceptionID of string
+  | `ParseError
+]
+
+val parse : string -> (t, [> errors]) result
+
+val valid_license_ids : string list
+
+val valid_exception_ids : string list
