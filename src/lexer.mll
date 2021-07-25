@@ -16,7 +16,7 @@ rule main = parse
   | "WITH" { Parser.WITH }
   | "AND" { Parser.AND }
   | "OR" { Parser.OR }
-  | (idstring as x) ':' (idstring as y) { Parser.REF (x, y) }
+  | ("DocumentRef-" (idstring as x) ':')? "LicenseRef-" (idstring as y) { Parser.REF (Option.value ~default:"" x, y) }
   | idstring as id { Parser.ID id }
   | (idstring as id) '+' { Parser.IDPLUS id }
   | eof { Parser.EOF }
