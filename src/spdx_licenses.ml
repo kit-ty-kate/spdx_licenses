@@ -19,8 +19,8 @@ type errors = [
 
 let ( >>= ) = Result.bind
 
-let valid_license_ids = (* LicenseIDs.list *) [] (* TODO *)
-let valid_exception_ids = (* ExceptionIDs.list *) [] (* TODO *)
+let valid_license_ids = LicenseIDs.list
+let valid_exception_ids = ExceptionIDs.list
 
 let invalid_license_id id =
   if List.exists (String.equal id) valid_license_ids
