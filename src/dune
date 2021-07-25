@@ -6,6 +6,7 @@
  (targets licenseIDs.ml exceptionIDs.ml)
  (deps ids/licenses.json ids/exceptions.json)
  (mode promote)
+ (enabled_if (= %{profile} "regenerate"))
  (action (run ./ids/generate.exe)))
 
 (ocamllex lexer)
