@@ -1,5 +1,16 @@
 (* SPDX-License-Identifier: MIT *)
 
+(* TODO: Remove this when upgrading to OCaml >= 4.08 *)
+module Result = struct
+  let bind x f = match x with
+    | Result.Ok x -> f x
+    | Result.Error _ -> x
+
+  let map f = function
+    | Result.Ok x -> Result.Ok (f x)
+    | Result.Error _ as x -> x
+end
+
 type simple_license = Types.simple_license =
   | LicenseID of string
   | LicenseIDPlus of string

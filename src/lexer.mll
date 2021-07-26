@@ -4,6 +4,13 @@
 
 exception Error
 
+(* TODO: Remove this when upgrading to OCaml >= 4.08 *)
+module Option = struct
+  let value ~default = function
+    | None -> default
+    | Some x -> x
+end
+
 }
 
 let idstring = ['a'-'z' 'A'-'Z' '0'-'9' '-' '.']+

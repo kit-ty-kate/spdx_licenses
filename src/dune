@@ -1,6 +1,8 @@
 (library
  (public_name spdx_licenses)
- (modules_without_implementation types))
+ (modules_without_implementation types)
+ (libraries result))
+; TODO: Remove this when upgrading to OCaml >= 4.08
 
 (rule
  (targets licenseIDs.ml exceptionIDs.ml)

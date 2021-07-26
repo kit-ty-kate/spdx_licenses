@@ -11,8 +11,9 @@ homepage: "https://github.com/kit-ty-kate/spdx_licenses"
 bug-reports: "https://github.com/kit-ty-kate/spdx_licenses/issues"
 dev-repo: "git+https://github.com/kit-ty-kate/spdx_licenses.git"
 depends: [
-  "ocaml" {>= "4.08"}
+  "ocaml" {>= "4.03"}
   "dune" {>= "2.3"}
+  "result" {>= "1.5"}
   "odoc" {with-doc}
 ]
 build: ["dune" "build" "-p" name "-j" jobs "@install" "@doc" {with-doc}]

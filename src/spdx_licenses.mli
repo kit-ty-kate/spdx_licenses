@@ -17,7 +17,7 @@ type errors = [
   | `ParseError
 ]
 
-val parse : string -> (t, [> errors]) result
+val parse : string -> (t, [> errors]) Result.t
 
 val valid_license_ids : string list
 
