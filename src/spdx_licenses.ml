@@ -60,3 +60,28 @@ let parse s =
   match Parser.main Lexer.main lexbuf with
   | license -> Result.map (fun () -> license) (find_invalid license)
   | exception (Lexer.Error | Parsing.Parse_error) -> Error `ParseError
+
+let simple_to_string = function
+  | LicenseID x -> x
+  | LicenseIDPlus x -> x^"+"
+  | LicenseRef ("", ref) -> "LicenseRef-"^ref
+  | LicenseRef (doc, ref) -> "DocumentRef-"^doc^":"^"LicenseRef-"^ref
+
+let to_string =
+  let rec aux ~prev = function
+    | Simple x -> simple_to_string x
+    | WITH (x, exc) -> simple_to_string x^" WITH "^exc
+    | AND (x, y) ->
+        let s = aux ~prev:`AND x^" AND "^aux ~prev:`AND y in
+        begin match prev with
+        | (`None | `AND) -> s
+        | `OR -> "("^s^")"
+        end
+    | OR (x, y) ->
+        let s = aux ~prev:`OR x^" OR "^aux ~prev:`OR y in
+        begin match prev with
+        | (`None | `OR) -> s
+        | `AND -> "("^s^")"
+        end
+  in
+  aux ~prev:`None

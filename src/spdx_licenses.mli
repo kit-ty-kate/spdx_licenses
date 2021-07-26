@@ -19,6 +19,8 @@ type errors = [
 
 val parse : string -> (t, [> errors]) Result.t
 
+val to_string : t -> string
+
 val valid_license_ids : string list
 
 val valid_exception_ids : string list
