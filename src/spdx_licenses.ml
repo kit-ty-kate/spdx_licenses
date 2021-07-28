@@ -33,13 +33,21 @@ let ( >>= ) = Result.bind
 let valid_license_ids = LicenseIDs.list
 let valid_exception_ids = ExceptionIDs.list
 
+let uppercased_valid_license_ids =
+  List.map String.uppercase_ascii valid_license_ids
+
+let uppercased_valid_exception_ids =
+  List.map String.uppercase_ascii valid_exception_ids
+
 let invalid_license_id id =
-  if List.exists (String.equal id) valid_license_ids
+  let uppercased_id = String.uppercase_ascii id in
+  if List.exists (String.equal uppercased_id) uppercased_valid_license_ids
   then Ok ()
   else Error (`InvalidLicenseID id)
 
 let invalid_exception_id id =
-  if List.exists (String.equal id) valid_exception_ids
+  let uppercased_id = String.uppercase_ascii id in
+  if List.exists (String.equal uppercased_id) uppercased_valid_exception_ids
   then Ok ()
   else Error (`InvalidExceptionID id)
 
