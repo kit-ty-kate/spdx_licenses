@@ -31,5 +31,8 @@ let () =
       test "parse has the right precedence rule"
         (parse "LGPL-2.1-only OR BSD-3-Clause AND MIT")
         "Ok (LGPL-2.1-only OR (BSD-3-Clause AND MIT))";
+      test "parse has the right case sensitivity"
+        (parse "BsD-2-clAUsE")
+        "Ok (BSD-2-Clause)";
     ]
   ]

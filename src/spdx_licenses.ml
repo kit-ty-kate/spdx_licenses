@@ -4,11 +4,11 @@
 module Result = struct
   let bind x f = match x with
     | Result.Ok x -> f x
-    | Result.Error _ -> x
+    | Result.Error x -> Result.Error x
 
   let map f = function
     | Result.Ok x -> Result.Ok (f x)
-    | Result.Error _ as x -> x
+    | Result.Error x -> Result.Error x
 end
 
 type simple_license = Types.simple_license =
@@ -29,44 +29,55 @@ type errors = [
 ]
 
 let ( >>= ) = Result.bind
+let ( >|= ) x f = Result.map f x
 
 let valid_license_ids = LicenseIDs.list
 let valid_exception_ids = ExceptionIDs.list
 
 let uppercased_valid_license_ids =
-  List.map String.uppercase_ascii valid_license_ids
+  List.map (fun x -> (x, String.uppercase_ascii x)) valid_license_ids
 
 let uppercased_valid_exception_ids =
-  List.map String.uppercase_ascii valid_exception_ids
+  List.map (fun x -> (x, String.uppercase_ascii x)) valid_exception_ids
 
-let invalid_license_id id =
-  let uppercased_id = String.uppercase_ascii id in
-  if List.exists (String.equal uppercased_id) uppercased_valid_license_ids
-  then Ok ()
-  else Error (`InvalidLicenseID id)
+let normalize_license_id id =
+  let eq = String.equal (String.uppercase_ascii id) in
+  match List.find (fun (_, up) -> eq up) uppercased_valid_license_ids with
+  | (x, _) -> Ok x
+  | exception Not_found -> Error (`InvalidLicenseID id)
 
-let invalid_exception_id id =
-  let uppercased_id = String.uppercase_ascii id in
-  if List.exists (String.equal uppercased_id) uppercased_valid_exception_ids
-  then Ok ()
-  else Error (`InvalidExceptionID id)
+let normalize_exception_id id =
+  let eq = String.equal (String.uppercase_ascii id) in
+  match List.find (fun (_, up) -> eq up) uppercased_valid_exception_ids with
+  | (x, _) -> Ok x
+  | exception Not_found -> Error (`InvalidExceptionID id)
 
-let find_invalid_id = function
-  | LicenseID id -> invalid_license_id id
-  | LicenseIDPlus id -> invalid_license_id id
-  | LicenseRef _ -> Ok ()
+let normalize_simple = function
+  | LicenseID id -> normalize_license_id id >|= fun id -> LicenseID id
+  | LicenseIDPlus id -> normalize_license_id id >|= fun id -> LicenseIDPlus id
+  | LicenseRef _ as x -> Ok x
 
-let rec find_invalid = function
-  | Simple license -> find_invalid_id license
+let rec normalize = function
+  | Simple license ->
+      normalize_simple license >|= fun license ->
+      Simple license
   | WITH (simple, exc) ->
-      find_invalid_id simple >>= fun () -> invalid_exception_id exc
-  | AND (x, y) -> find_invalid x >>= fun () -> find_invalid y
-  | OR (x, y) -> find_invalid x >>= fun () -> find_invalid y
+      normalize_simple simple >>= fun simple ->
+      normalize_exception_id exc >|= fun exc ->
+      WITH (simple, exc)
+  | AND (x, y) ->
+      normalize x >>= fun x ->
+      normalize y >|= fun y ->
+      AND (x, y)
+  | OR (x, y) ->
+      normalize x >>= fun x ->
+      normalize y >|= fun y ->
+      OR (x, y)
 
 let parse s =
   let lexbuf = Lexing.from_string s in
   match Parser.main Lexer.main lexbuf with
-  | license -> Result.map (fun () -> license) (find_invalid license)
+  | license -> normalize license
   | exception (Lexer.Error | Parsing.Parse_error) -> Error `ParseError
 
 let simple_to_string = function
