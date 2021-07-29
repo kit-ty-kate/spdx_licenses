@@ -2,7 +2,7 @@
 
 %token <string> ID
 %token <string> IDPLUS
-%token <string * string> REF
+%token <string option * string> REF
 %token WITH
 %token AND
 %token OR
@@ -23,7 +23,8 @@ main: body EOF { $1 }
 simple:
   | ID { Types.LicenseID $1 }
   | IDPLUS { Types.LicenseIDPlus $1 }
-  | REF { Types.LicenseRef $1 }
+  | REF { let (doc, license) = $1 in
+          Types.LicenseRef {Types.document_ref = doc; license_ref = license} }
 
 body:
   | simple { Types.Simple $1 }

@@ -1,12 +1,16 @@
 (* SPDX-License-Identifier: MIT *)
 
+(** ["DocumentRef-" idstring ":"]"LicenseRef-" idstring *)
+type user_defined_license = {
+  document_ref : string option;
+  license_ref : string;
+}
+
 (** simple-expression *)
 type simple_license =
   | LicenseID of string (** license-id *)
   | LicenseIDPlus of string (** license-id '+' (the '+' isn't contained in the string) *)
-  | LicenseRef of (string * string) (** A SPDX user defined license reference.
-                                        The first string is the document reference and can be empty.
-                                        The second string is the license reference and is NOT empty. *)
+  | LicenseRef of user_defined_license (** A SPDX user defined license reference *)
 
 (** license-expression *)
 type t =

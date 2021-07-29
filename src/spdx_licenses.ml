@@ -11,10 +11,15 @@ module Result = struct
     | Result.Error x -> Result.Error x
 end
 
+type user_defined_license = Types.user_defined_license = {
+  document_ref : string option;
+  license_ref : string;
+}
+
 type simple_license = Types.simple_license =
   | LicenseID of string
   | LicenseIDPlus of string
-  | LicenseRef of (string * string)
+  | LicenseRef of user_defined_license
 
 type t = Types.t =
   | Simple of simple_license
@@ -80,11 +85,16 @@ let parse s =
   | license -> normalize license
   | exception (Lexer.Error | Parsing.Parse_error) -> Error `ParseError
 
+let user_defined_license_to_string = function
+  | {document_ref = None; license_ref} ->
+      "LicenseRef-"^license_ref
+  | {document_ref = Some document_ref; license_ref} ->
+      "DocumentRef-"^document_ref^":"^"LicenseRef-"^license_ref
+
 let simple_to_string = function
   | LicenseID x -> x
   | LicenseIDPlus x -> x^"+"
-  | LicenseRef ("", ref) -> "LicenseRef-"^ref
-  | LicenseRef (doc, ref) -> "DocumentRef-"^doc^":"^"LicenseRef-"^ref
+  | LicenseRef user_def -> user_defined_license_to_string user_def
 
 let to_string =
   let rec aux ~prev = function
