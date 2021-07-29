@@ -14,10 +14,10 @@ type simple_license =
 
 (** license-expression *)
 type t =
-  | Simple of simple_license
-  | WITH of simple_license * string
-  | AND of t * t
-  | OR of t * t
+  | Simple of simple_license (** simple-expression *)
+  | WITH of simple_license * string (** simple-expression "WITH" license-exception-id *)
+  | AND of t * t (** compound-expression "AND" compound-expression *)
+  | OR of t * t (** compound-expression "OR" compound-expression *)
 
 type errors = [
   | `InvalidLicenseID of string
