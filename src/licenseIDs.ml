@@ -15,7 +15,6 @@ let list = [
   "Borceux";
   "GFDL-1.1-invariants-or-later";
   "Xerox";
-  "GPL-3.0+";
   "GFDL-1.1-invariants-only";
   "BSD-3-Clause-LBNL";
   "Parity-6.0.0";
@@ -27,12 +26,10 @@ let list = [
   "HaskellReport";
   "ODbL-1.0";
   "MTLL";
-  "wxWindows";
   "Artistic-1.0-cl8";
   "Python-2.0";
   "Afmparse";
   "Spencer-86";
-  "LGPL-2.0+";
   "Frameworx-1.0";
   "CC-BY-3.0-AT";
   "UPL-1.0";
@@ -42,7 +39,6 @@ let list = [
   "PostgreSQL";
   "SWL";
   "SNIA";
-  "GPL-2.0-with-autoconf-exception";
   "GFDL-1.3-or-later";
   "CC-BY-NC-ND-3.0";
   "CERN-OHL-1.1";
@@ -55,7 +51,6 @@ let list = [
   "MITNFA";
   "Spencer-99";
   "NCGL-UK-2.0";
-  "StandardML-NJ";
   "CDDL-1.1";
   "blessing";
   "FSFAP";
@@ -67,7 +62,6 @@ let list = [
   "LPPL-1.3a";
   "Intel";
   "NPL-1.0";
-  "GPL-2.0-with-classpath-exception";
   "MIT-feh";
   "YPL-1.0";
   "Glide";
@@ -75,7 +69,6 @@ let list = [
   "CC-BY-NC-2.5";
   "PSF-2.0";
   "CC-BY-NC-4.0";
-  "GFDL-1.3";
   "SimPL-2.0";
   "EUPL-1.1";
   "Intel-ACPI";
@@ -84,7 +77,6 @@ let list = [
   "Cube";
   "HPND-sell-variant";
   "Abstyles";
-  "Nunit";
   "CC-PDDC";
   "Eurosym";
   "CC-BY-ND-4.0";
@@ -146,19 +138,15 @@ let list = [
   "Rdisc";
   "FreeImage";
   "SSH-OpenSSH";
-  "AGPL-1.0";
   "Fair";
   "ZPL-2.1";
   "SPL-1.0";
   "CC-BY-2.5";
-  "LGPL-2.0";
-  "LGPL-2.1+";
   "EFL-1.0";
   "CC-BY-2.0";
   "GL2PS";
   "CECILL-1.0";
   "SCEA";
-  "GPL-3.0-with-autoconf-exception";
   "NPL-1.1";
   "GPL-1.0-or-later";
   "Watcom-1.0";
@@ -167,9 +155,7 @@ let list = [
   "Plexus";
   "CC-BY-SA-1.0";
   "CC-BY-ND-2.0";
-  "GPL-2.0-with-bison-exception";
   "Barr";
-  "BSD-2-Clause-FreeBSD";
   "ECL-2.0";
   "SISSL-1.2";
   "OLDAP-2.2";
@@ -185,11 +171,8 @@ let list = [
   "CPL-1.0";
   "xpp";
   "diffmark";
-  "GPL-2.0+";
   "Imlib2";
-  "GFDL-1.1";
   "HPND";
-  "GPL-1.0";
   "BitTorrent-1.1";
   "RSA-MD";
   "CC-BY-NC-SA-2.5";
@@ -209,7 +192,6 @@ let list = [
   "GFDL-1.2-invariants-only";
   "GPL-3.0-or-later";
   "Naumen";
-  "GPL-3.0";
   "GD";
   "Apache-2.0";
   "Multics";
@@ -222,13 +204,11 @@ let list = [
   "XFree86-1.1";
   "Sleepycat";
   "PolyForm-Small-Business-1.0.0";
-  "GPL-2.0-with-GCC-exception";
   "AFL-2.0";
   "GFDL-1.3-no-invariants-only";
   "OSL-2.1";
   "VOSTROM";
   "Info-ZIP";
-  "GPL-2.0-with-font-exception";
   "Unicode-DFS-2015";
   "APSL-2.0";
   "CC-BY-NC-ND-4.0";
@@ -266,7 +246,6 @@ let list = [
   "IBM-pibs";
   "OCLC-2.0";
   "CDDL-1.0";
-  "BSD-2-Clause-NetBSD";
   "OLDAP-2.6";
   "GFDL-1.2-only";
   "NLOD-1.0";
@@ -280,8 +259,6 @@ let list = [
   "MS-PL";
   "IPL-1.0";
   "ZPL-2.0";
-  "GPL-1.0+";
-  "LGPL-3.0";
   "CECILL-2.1";
   "OCCT-PL";
   "CERN-OHL-1.2";
@@ -304,7 +281,6 @@ let list = [
   "Qhull";
   "OPL-1.0";
   "RHeCos-1.1";
-  "eCos-2.0";
   "MulanPSL-2.0";
   "Mup";
   "OLDAP-2.3";
@@ -388,7 +364,6 @@ let list = [
   "RSCPL";
   "PHP-3.01";
   "BSD-2-Clause-Patent";
-  "LGPL-3.0+";
   "NPOSL-3.0";
   "TORQUE-1.1";
   "GFDL-1.2-invariants-or-later";
@@ -400,7 +375,6 @@ let list = [
   "DRL-1.0";
   "GFDL-1.2-no-invariants-only";
   "OSET-PL-2.1";
-  "GPL-2.0";
   "W3C";
   "GFDL-1.3-invariants-or-later";
   "Unlicense";
@@ -416,7 +390,6 @@ let list = [
   "GLWTPL";
   "AGPL-3.0-only";
   "OFL-1.0-no-RFN";
-  "AGPL-3.0";
   "MIT-0";
   "CECILL-B";
   "LGPL-3.0-only";
@@ -432,14 +405,12 @@ let list = [
   "CC-BY-NC-ND-2.0";
   "PolyForm-Noncommercial-1.0.0";
   "Dotseqn";
-  "GPL-3.0-with-GCC-exception";
   "LAL-1.3";
   "SMLNJ";
   "BSL-1.0";
   "MIT-Modern-Variant";
   "Glulxe";
   "Saxpath";
-  "GFDL-1.2";
   "gSOAP-1.3b";
   "OLDAP-1.1";
   "LGPL-2.1-only";
@@ -463,6 +434,5 @@ let list = [
   "Interbase-1.0";
   "OLDAP-2.5";
   "BSD-2-Clause-Views";
-  "LGPL-2.1";
   "BSD-4-Clause";
 ]

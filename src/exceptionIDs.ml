@@ -20,7 +20,6 @@ let list = [
   "LZMA-exception";
   "FLTK-exception";
   "Autoconf-exception-2.0";
-  "Nokia-Qt-exception-1.1";
   "LLVM-exception";
   "Universal-FOSS-exception-1.0";
   "Fawkes-Runtime-exception";

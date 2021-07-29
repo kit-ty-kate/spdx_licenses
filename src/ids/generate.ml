@@ -23,9 +23,18 @@ let generate_licenses () =
   let list =
     let value = read "ids/licenses.json" in
     Ezjsonm.find value ["licenses"] |>
-    Ezjsonm.get_list begin fun license ->
-      Ezjsonm.find license ["licenseId"] |>
-      Ezjsonm.get_string
+    Ezjsonm.get_list Fun.id |>
+    List.filter_map begin fun license ->
+      let is_deprecated =
+        Ezjsonm.find license ["isDeprecatedLicenseId"] |>
+        Ezjsonm.get_bool
+      in
+      if is_deprecated then
+        None
+      else
+        Ezjsonm.find license ["licenseId"] |>
+        Ezjsonm.get_string |>
+        Option.some
     end
   in
   write "licenseIDs.ml" list
@@ -34,9 +43,18 @@ let generate_exceptions () =
   let list =
     let value = read "ids/exceptions.json" in
     Ezjsonm.find value ["exceptions"] |>
-    Ezjsonm.get_list begin fun license ->
-      Ezjsonm.find license ["licenseExceptionId"] |>
-      Ezjsonm.get_string
+    Ezjsonm.get_list Fun.id |>
+    List.filter_map begin fun license ->
+      let is_deprecated =
+        Ezjsonm.find license ["isDeprecatedLicenseId"] |>
+        Ezjsonm.get_bool
+      in
+      if is_deprecated then
+        None
+      else
+        Ezjsonm.find license ["licenseExceptionId"] |>
+        Ezjsonm.get_string |>
+        Option.some
     end
   in
   write "exceptionIDs.ml" list
