@@ -25,7 +25,7 @@ type errors = [
   | `ParseError
 ]
 
-val parse : string -> (t, [> errors]) Result.t
+val parse : string -> (t, [> errors]) result
 (** [parse str] parses [str] according to the syntax described in:
     https://spdx.github.io/spdx-spec/appendix-IV-SPDX-license-expressions/ *)
 
