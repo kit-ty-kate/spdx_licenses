@@ -3,12 +3,12 @@
 (* TODO: Remove this when upgrading to OCaml >= 4.08 *)
 module Result = struct
   let bind x f = match x with
-    | Result.Ok x -> f x
-    | Result.Error x -> Result.Error x
+    | Ok x -> f x
+    | Error x -> Error x
 
   let map f = function
-    | Result.Ok x -> Result.Ok (f x)
-    | Result.Error x -> Result.Error x
+    | Ok x -> Ok (f x)
+    | Error x -> Error x
 end
 
 type user_defined_license = Types.user_defined_license = {
