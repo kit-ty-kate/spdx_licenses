@@ -27,7 +27,7 @@ type t = Types.t =
   | AND of t * t
   | OR of t * t
 
-type errors = [
+type error = [
   | `InvalidLicenseID of string
   | `InvalidExceptionID of string
   | `ParseError

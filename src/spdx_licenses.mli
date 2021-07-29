@@ -19,13 +19,14 @@ type t =
   | AND of t * t (** compound-expression "AND" compound-expression *)
   | OR of t * t (** compound-expression "OR" compound-expression *)
 
-type errors = [
+(** The errors returned by the parser *)
+type error = [
   | `InvalidLicenseID of string
   | `InvalidExceptionID of string
   | `ParseError
 ]
 
-val parse : string -> (t, [> errors]) result
+val parse : string -> (t, [> error]) result
 (** [parse str] parses [str] according to the syntax described in:
     https://spdx.github.io/spdx-spec/appendix-IV-SPDX-license-expressions/ *)
 
