@@ -1,3 +1,8 @@
+v1.1.0 (05/09/2021)
+-------------------
+
+- Increase the minimal required version of OCaml from 4.03 to 4.08 (@kit-ty-kate)
+
 v1.0.0 (29/07/2021)
 -------------------
 
