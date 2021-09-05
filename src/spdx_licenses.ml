@@ -1,16 +1,5 @@
 (* SPDX-License-Identifier: MIT *)
 
-(* TODO: Remove this when upgrading to OCaml >= 4.08 *)
-module Result = struct
-  let bind x f = match x with
-    | Ok x -> f x
-    | Error x -> Error x
-
-  let map f = function
-    | Ok x -> Ok (f x)
-    | Error x -> Error x
-end
-
 type user_defined_license = Types.user_defined_license = {
   document_ref : string option;
   license_ref : string;
