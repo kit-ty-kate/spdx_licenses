@@ -17,6 +17,9 @@ let list = [
   "GPL-3.0-linking-exception";
   "GPL-3.0-linking-source-exception";
   "GPL-CC-1.0";
+  "GStreamer-exception-2005";
+  "GStreamer-exception-2008";
+  "KiCad-libraries-exception";
   "LGPL-3.0-linking-exception";
   "LLVM-exception";
   "LZMA-exception";
@@ -41,4 +44,5 @@ let list = [
   "mif-exception";
   "openvpn-openssl-exception";
   "u-boot-exception-2.0";
+  "x11vnc-openssl-exception";
 ]
