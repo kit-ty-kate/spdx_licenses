@@ -4,6 +4,7 @@ let output_endline ch s =
   Stdlib.output_string ch (s^"\n")
 
 let write file list =
+  let list = List.stable_sort String.compare list in
   let ch = Stdlib.open_out file in
   Fun.protect ~finally:(fun () -> close_out ch) begin fun () ->
     output_endline ch "(* This file was generated. See dune file. *)";
