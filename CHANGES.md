@@ -1,3 +1,9 @@
+v1.2.0 (06/01/2023)
+-------------------
+
+- Upgrade to Version 3.19 of the SPDX License List (@kit-ty-kate)
+- Always sort the lists of licenses and exceptions the same way to make it easier to diff with later changes (@kit-ty-kate)
+
 v1.1.0 (05/09/2021)
 -------------------
 
