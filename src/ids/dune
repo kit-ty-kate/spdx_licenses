@@ -6,13 +6,13 @@
  (targets licenses.json)
  (mode promote)
  (enabled_if (= %{profile} "regenerate"))
- (action (run curl -sLO https://raw.githubusercontent.com/spdx/license-list-data/refs/tags/v3.19/json/licenses.json)))
+ (action (run curl -sLO https://raw.githubusercontent.com/spdx/license-list-data/refs/tags/v3.26.0/json/licenses.json)))
 
 (rule
  (targets exceptions.json)
  (mode promote)
  (enabled_if (= %{profile} "regenerate"))
- (action (run curl -sLO https://raw.githubusercontent.com/spdx/license-list-data/refs/tags/v3.19/json/exceptions.json)))
+ (action (run curl -sLO https://raw.githubusercontent.com/spdx/license-list-data/refs/tags/v3.26.0/json/exceptions.json)))
 
 (executable
  (name generate)
