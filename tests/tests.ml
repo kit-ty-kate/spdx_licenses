@@ -51,5 +51,20 @@ let () =
       test "parse has the right case sensitivity"
         (parse "BsD-2-clAUsE")
         "Ok (BSD-2-Clause)";
+      test "make sure lower-case AND works"
+        (parse "MIT and BSD-2-Clause")
+        "Ok (MIT AND BSD-2-Clause)";
+      test "make sure lower-case OR works"
+        (parse "MIT or BSD-2-Clause")
+        "Ok (MIT OR BSD-2-Clause)";
+      test "make sure lower-case WITH works"
+        (parse "MIT with OCaml-LGPL-linking-exception")
+        "Ok (MIT WITH OCaml-LGPL-linking-exception)";
+      test "parse custom additions"
+        (parse "MIT WITH AdditionRef-MyException")
+        "Ok (MIT WITH AdditionRef-MyException)";
+      test "parse custom additions"
+        (parse "MIT WITH AdditionRef-MyException")
+        "Ok (MIT WITH AdditionRef-MyException)";
     ]
   ]

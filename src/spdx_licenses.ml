@@ -10,9 +10,18 @@ type simple_license = Types.simple_license =
   | LicenseIDPlus of string
   | LicenseRef of user_defined_license
 
+type user_defined_addition = Types.user_defined_addition = {
+  document_ref : string option;
+  addition_ref : string;
+}
+
+type addition = Types.addition =
+  | Exception of string
+  | AdditionRef of user_defined_addition
+
 type t = Types.t =
   | Simple of simple_license
-  | WITH of simple_license * string
+  | WITH of simple_license * addition
   | AND of t * t
   | OR of t * t
 
@@ -51,14 +60,18 @@ let normalize_simple = function
   | LicenseIDPlus id -> normalize_license_id id >|= fun id -> LicenseIDPlus id
   | LicenseRef _ as x -> Ok x
 
+let normalize_addition = function
+  | Exception exc -> normalize_exception_id exc >|= fun exc -> Exception exc
+  | AdditionRef _ as x -> Ok x
+
 let rec normalize = function
   | Simple license ->
       normalize_simple license >|= fun license ->
       Simple license
-  | WITH (simple, exc) ->
+  | WITH (simple, addition) ->
       normalize_simple simple >>= fun simple ->
-      normalize_exception_id exc >|= fun exc ->
-      WITH (simple, exc)
+      normalize_addition addition >|= fun addition ->
+      WITH (simple, addition)
   | AND (x, y) ->
       normalize x >>= fun x ->
       normalize y >|= fun y ->
@@ -85,10 +98,21 @@ let simple_to_string = function
   | LicenseIDPlus x -> x^"+"
   | LicenseRef user_def -> user_defined_license_to_string user_def
 
+let user_defined_addition_to_string = function
+  | {document_ref = None; addition_ref} ->
+      "AdditionRef-"^addition_ref
+  | {document_ref = Some document_ref; addition_ref} ->
+      "DocumentRef-"^document_ref^":"^"AdditionRef-"^addition_ref
+
+let addition_to_string = function
+  | Exception x -> x
+  | AdditionRef user_def -> user_defined_addition_to_string user_def
+
 let to_string =
   let rec aux ~prev = function
     | Simple x -> simple_to_string x
-    | WITH (x, exc) -> simple_to_string x^" WITH "^exc
+    | WITH (x, addition) ->
+        simple_to_string x^" WITH "^addition_to_string addition
     | AND (x, y) ->
         let s = aux ~prev:`AND x^" AND "^aux ~prev:`AND y in
         begin match prev with
