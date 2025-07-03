@@ -1,3 +1,8 @@
+v1.4.0 (03/07/2025)
+-------------------
+
+- Upgrade to Version 3.27.0 of the SPDX License List (@kit-ty-kate)
+
 v1.3.0 (19/01/2024)
 -------------------
 
