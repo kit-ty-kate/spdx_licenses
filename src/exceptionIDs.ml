@@ -16,6 +16,7 @@ let list = [
   "CLISP-exception-2.0";
   "Classpath-exception-2.0";
   "DigiRule-FOSS-exception";
+  "Digia-Qt-LGPL-exception-1.1";
   "FLTK-exception";
   "Fawkes-Runtime-exception";
   "Font-exception-2.0";
@@ -72,6 +73,7 @@ let list = [
   "mif-exception";
   "mxml-exception";
   "openvpn-openssl-exception";
+  "polyparse-exception";
   "romic-exception";
   "stunnel-exception";
   "u-boot-exception-2.0";
