@@ -15,6 +15,7 @@ let list = [
   "CGAL-linking-exception";
   "CLISP-exception-2.0";
   "Classpath-exception-2.0";
+  "Classpath-exception-2.0-short";
   "DigiRule-FOSS-exception";
   "Digia-Qt-LGPL-exception-1.1";
   "FLTK-exception";
@@ -56,6 +57,7 @@ let list = [
   "SHL-2.0";
   "SHL-2.1";
   "SWI-exception";
+  "Simple-Library-Usage-exception";
   "Swift-exception";
   "Texinfo-exception";
   "UBDL-exception";
@@ -69,12 +71,15 @@ let list = [
   "gnu-javamail-exception";
   "harbour-exception";
   "i2p-gpl-java-exception";
+  "kvirc-openssl-exception";
   "libpri-OpenH323-exception";
   "mif-exception";
   "mxml-exception";
   "openvpn-openssl-exception";
   "polyparse-exception";
   "romic-exception";
+  "rsync-linking-exception";
+  "sqlitestudio-OpenSSL-exception";
   "stunnel-exception";
   "u-boot-exception-2.0";
   "vsftpd-openssl-exception";

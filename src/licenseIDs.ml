@@ -14,6 +14,7 @@ let list = [
   "AGPL-1.0-or-later";
   "AGPL-3.0-only";
   "AGPL-3.0-or-later";
+  "ALGLIB-Documentation";
   "AMD-newlib";
   "AMDPLPA";
   "AML";
@@ -35,6 +36,7 @@ let list = [
   "Adobe-Display-PostScript";
   "Adobe-Glyph";
   "Adobe-Utopia";
+  "Advanced-Cryptics-Dictionary";
   "Afmparse";
   "Aladdin";
   "Apache-1.0";
@@ -48,6 +50,7 @@ let list = [
   "Artistic-2.0";
   "Artistic-dist";
   "Aspell-RU";
+  "BOLA-1.1";
   "BSD-1-Clause";
   "BSD-2-Clause";
   "BSD-2-Clause-Darwin";
@@ -67,6 +70,7 @@ let list = [
   "BSD-3-Clause-No-Nuclear-Warranty";
   "BSD-3-Clause-Open-MPI";
   "BSD-3-Clause-Sun";
+  "BSD-3-Clause-Tso";
   "BSD-3-Clause-acpica";
   "BSD-3-Clause-flex";
   "BSD-4-Clause";
@@ -77,6 +81,7 @@ let list = [
   "BSD-Advertising-Acknowledgement";
   "BSD-Attribution-HPND-disclaimer";
   "BSD-Inferno-Nettverk";
+  "BSD-Mark-Modifications";
   "BSD-Protection";
   "BSD-Source-Code";
   "BSD-Source-beginning-file";
@@ -98,9 +103,11 @@ let list = [
   "Borceux";
   "Brian-Gladman-2-Clause";
   "Brian-Gladman-3-Clause";
+  "Buddy";
   "C-UDA-1.0";
   "CAL-1.0";
   "CAL-1.0-Combined-Work-Exception";
+  "CAPEC-tou";
   "CATOSL-1.1";
   "CC-BY-1.0";
   "CC-BY-2.0";
@@ -218,6 +225,9 @@ let list = [
   "EPICS";
   "EPL-1.0";
   "EPL-2.0";
+  "ESA-PL-permissive-2.4";
+  "ESA-PL-strong-copyleft-2.4";
+  "ESA-PL-weak-copyleft-2.4";
   "EUDatagrid";
   "EUPL-1.0";
   "EUPL-1.1";
@@ -291,6 +301,7 @@ let list = [
   "HPND-Markus-Kuhn";
   "HPND-Netrek";
   "HPND-Pbmplus";
+  "HPND-SMC";
   "HPND-UC";
   "HPND-UC-export-US";
   "HPND-doc";
@@ -305,6 +316,7 @@ let list = [
   "HPND-sell-variant";
   "HPND-sell-variant-MIT-disclaimer";
   "HPND-sell-variant-MIT-disclaimer-rev";
+  "HPND-sell-variant-critical-systems";
   "HTMLTIDY";
   "HaskellReport";
   "Hippocratic-2.1";
@@ -317,6 +329,7 @@ let list = [
   "IPL-1.0";
   "ISC";
   "ISC-Veillard";
+  "ISO-permission";
   "ImageMagick";
   "Imlib2";
   "Info-ZIP";
@@ -374,6 +387,7 @@ let list = [
   "MIT-Festival";
   "MIT-Khronos-old";
   "MIT-Modern-Variant";
+  "MIT-STK";
   "MIT-Wu";
   "MIT-advertising";
   "MIT-enna";
@@ -382,6 +396,7 @@ let list = [
   "MIT-testregex";
   "MITNFA";
   "MMIXware";
+  "MMPL-1.0.1";
   "MPEG-SSG";
   "MPL-1.0";
   "MPL-1.1";
@@ -413,6 +428,7 @@ let list = [
   "NGPL";
   "NICTA-1.0";
   "NIST-PD";
+  "NIST-PD-TNT";
   "NIST-PD-fallback";
   "NIST-Software";
   "NLOD-1.0";
@@ -472,12 +488,15 @@ let list = [
   "OPL-1.0";
   "OPL-UK-3.0";
   "OPUBL-1.0";
+  "OSC-1.0";
   "OSET-PL-2.1";
   "OSL-1.0";
   "OSL-1.1";
   "OSL-2.0";
   "OSL-2.1";
   "OSL-3.0";
+  "OSSP";
+  "OpenMDW-1.0";
   "OpenPBS-2.3";
   "OpenSSL";
   "OpenSSL-standalone";
@@ -488,6 +507,7 @@ let list = [
   "PHP-3.01";
   "PPL";
   "PSF-2.0";
+  "ParaType-Free-Font-1.3";
   "Parity-6.0.0";
   "Parity-7.0.0";
   "Pixar";
@@ -516,6 +536,7 @@ let list = [
   "SGI-B-1.1";
   "SGI-B-2.0";
   "SGI-OpenGL";
+  "SGMLUG-PM";
   "SGP4";
   "SHL-0.5";
   "SHL-0.51";
@@ -563,6 +584,7 @@ let list = [
   "TTYP0";
   "TU-Berlin-1.0";
   "TU-Berlin-2.0";
+  "TekHVC";
   "TermReadKey";
   "ThirdEye";
   "TrustedQSL";
@@ -572,6 +594,7 @@ let list = [
   "UPL-1.0";
   "URT-RLE";
   "Ubuntu-font-1.0";
+  "UnRAR";
   "Unicode-3.0";
   "Unicode-DFS-2015";
   "Unicode-DFS-2016";
@@ -583,15 +606,19 @@ let list = [
   "VOSTROM";
   "VSL-1.0";
   "Vim";
+  "Vixie-Cron";
   "W3C";
   "W3C-19980720";
   "W3C-20150513";
+  "WTFNMFPL";
   "WTFPL";
   "Watcom-1.0";
   "Widget-Workshop";
+  "WordNet";
   "Wsuipa";
   "X11";
   "X11-distribute-modifications-variant";
+  "X11-no-permit-persons";
   "X11-swapped";
   "XFree86-1.1";
   "XSkat";
@@ -632,6 +659,7 @@ let list = [
   "gnuplot";
   "gtkbook";
   "hdparm";
+  "hyphen-bulgarian";
   "iMatix";
   "jove";
   "libpng-1.6.35";
