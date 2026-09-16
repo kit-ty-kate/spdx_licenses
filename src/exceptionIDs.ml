@@ -35,6 +35,7 @@ let list = [
   "GStreamer-exception-2005";
   "GStreamer-exception-2008";
   "Gmsh-exception";
+  "Google-Patent-WebM";
   "Independent-modules-exception";
   "KiCad-libraries-exception";
   "LGPL-3.0-linking-exception";
@@ -58,6 +59,7 @@ let list = [
   "SHL-2.1";
   "SWI-exception";
   "Simple-Library-Usage-exception";
+  "Spelling-Provider-LGPL-exception";
   "Swift-exception";
   "Texinfo-exception";
   "UBDL-exception";

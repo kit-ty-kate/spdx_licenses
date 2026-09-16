@@ -58,6 +58,7 @@ let list = [
   "BSD-2-Clause-Views";
   "BSD-2-Clause-first-lines";
   "BSD-2-Clause-pkgconf-disclaimer";
+  "BSD-2-Clause-pos-unchanged";
   "BSD-3-Clause";
   "BSD-3-Clause-Attribution";
   "BSD-3-Clause-Clear";
@@ -69,6 +70,7 @@ let list = [
   "BSD-3-Clause-No-Nuclear-License-2014";
   "BSD-3-Clause-No-Nuclear-Warranty";
   "BSD-3-Clause-Open-MPI";
+  "BSD-3-Clause-OpenWebUI";
   "BSD-3-Clause-Sun";
   "BSD-3-Clause-Tso";
   "BSD-3-Clause-acpica";
@@ -84,9 +86,12 @@ let list = [
   "BSD-Mark-Modifications";
   "BSD-Protection";
   "BSD-Source-Code";
+  "BSD-Source-Code-no-disclaimer";
+  "BSD-Source-alt-GPL";
   "BSD-Source-beginning-file";
   "BSD-Systemics";
   "BSD-Systemics-W3Works";
+  "BSD-ask-to-endorse";
   "BSL-1.0";
   "BUSL-1.1";
   "Baekmuk";
@@ -103,7 +108,9 @@ let list = [
   "Borceux";
   "Brian-Gladman-2-Clause";
   "Brian-Gladman-3-Clause";
+  "Brian-Gladman-3-Clause-no-conversion";
   "Buddy";
+  "Bugroff";
   "C-UDA-1.0";
   "CAL-1.0";
   "CAL-1.0-Combined-Work-Exception";
@@ -126,6 +133,7 @@ let list = [
   "CC-BY-NC-2.5";
   "CC-BY-NC-3.0";
   "CC-BY-NC-3.0-DE";
+  "CC-BY-NC-3.0-IGO";
   "CC-BY-NC-4.0";
   "CC-BY-NC-ND-1.0";
   "CC-BY-NC-ND-2.0";
@@ -238,6 +246,7 @@ let list = [
   "Eurosym";
   "FBM";
   "FDK-AAC";
+  "FDK-MPEG-H";
   "FSFAP";
   "FSFAP-no-warranty-disclaimer";
   "FSFUL";
@@ -320,6 +329,7 @@ let list = [
   "HTMLTIDY";
   "HaskellReport";
   "Hippocratic-2.1";
+  "Hippocratic-3.0-core";
   "IBM-pibs";
   "ICU";
   "IEC-Code-Components-EULA";
@@ -333,6 +343,7 @@ let list = [
   "ImageMagick";
   "Imlib2";
   "Info-ZIP";
+  "Informatica";
   "Inner-Net-2.0";
   "InnoSetup";
   "Intel";
@@ -406,6 +417,7 @@ let list = [
   "MS-PL";
   "MS-RL";
   "MTLL";
+  "MVT-1.1";
   "Mackerras-3-Clause";
   "Mackerras-3-Clause-acknowledgment";
   "MakeIndex";
@@ -639,6 +651,7 @@ let list = [
   "Zlib";
   "any-OSI";
   "any-OSI-perl-modules";
+  "atc-game";
   "bcrypt-Solar-Designer";
   "blessing";
   "bzip2-1.0.6";
